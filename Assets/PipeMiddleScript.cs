@@ -21,7 +21,15 @@ public class PipeMiddleScript : MonoBehaviour
     {
         if(collision.gameObject.layer == 3)
         {
-            logic.addScore(1);
+            int number =  logic.getNumber();
+            if (number > 4)
+            {
+                logic.addScore(number / 5 * 5);
+            }
+            else
+            {
+                logic.addScore(1);
+            }
         }
         
     }

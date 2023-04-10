@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class LogicScript : MonoBehaviour
 {
     public int playerScore;
+    public int numberPassed;
     public Text scoreText;
     public GameObject gameOverScreen;
 
@@ -16,6 +17,11 @@ public class LogicScript : MonoBehaviour
     {
         playerScore = playerScore + scoreToAdd;
         scoreText.text = playerScore.ToString();
+        numberPassed++;
+    }
+    public int getNumber()
+    {
+       return numberPassed;
     }
 
     public void restartGame() 
