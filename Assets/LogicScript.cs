@@ -11,6 +11,7 @@ public class LogicScript : MonoBehaviour
     public int numberPassed;
     public Text scoreText;
     public GameObject gameOverScreen;
+    public AudioClip niganma;
 
     [ContextMenu("Increase Score")]
     public void addScore(int scoreToAdd)
