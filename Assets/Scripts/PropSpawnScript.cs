@@ -24,7 +24,7 @@ public class PropSpawnScript : MonoBehaviour
         else
         {
             int yesOrno = Random.Range(0, 10);
-            if (yesOrno > 2) {
+            if (yesOrno > 8) {
                 spawnzhongfen();
             }
             timer = 0;

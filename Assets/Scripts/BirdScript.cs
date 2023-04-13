@@ -12,10 +12,9 @@ public class BirdScript : MonoBehaviour
     public AudioSource amagi;
     public float moveSpeed = 5;
     public int zhongfen = 0;
-    public float debugy = 5;
-    public float currenty = 0;
-    public float debugKuny = 0;
-    public float debugKunx = 0;
+    public int iszhongfen2 = 0;
+    public GameObject zhongfen2;
+    public float time = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,15 +28,17 @@ public class BirdScript : MonoBehaviour
         {
             float yvelocity = FindyVelocityZhongFen();
             myRigidbody.velocity = Vector2.up * yvelocity;
-            debugy = yvelocity;
+            if (iszhongfen2 == 0)
+            {
+                spawnZhongfen();
+            }
         }
         else if(Input.GetKeyDown(KeyCode.Space) == true && birdIsAlive == true)
         {
             niganma.Play();
             myRigidbody.velocity = Vector2.up * flapStrength;
         }
-        myRigidbody.transform.Rotate(new Vector3(0, 0, -1));
-        currenty = myRigidbody.velocity.y;
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -56,11 +57,16 @@ public class BirdScript : MonoBehaviour
             {
                 xdistance = Kun.transform.position.x - transform.position.x;
                 ydistance = transform.position.y - Kun.transform.position.y;
-                debugKuny = ydistance;
-                debugKunx = xdistance;
+                
             }
         }
         return -ydistance / xdistance * moveSpeed;
     }
-   
+   public void spawnZhongfen()
+    {
+
+        GameObject childGameObject = Instantiate(zhongfen2, this.gameObject.transform, true);
+        childGameObject.transform.position= transform.position + Vector3.up*2;
+        iszhongfen2 = 1;
+    }
 }
