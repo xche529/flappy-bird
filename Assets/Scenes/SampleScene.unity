@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 12577474}
   m_Layer: 3
   m_Name: bird
-  m_TagString: Untagged
+  m_TagString: Bird
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -268,6 +268,12 @@ MonoBehaviour:
   birdIsAlive: 1
   niganma: {fileID: 12577475}
   amagi: {fileID: 12577474}
+  moveSpeed: 5
+  zhongfen: 0
+  debugy: 5
+  currenty: 0
+  debugKuny: 0
+  debugKunx: 0
 --- !u!82 &12577474
 AudioSource:
   m_ObjectHideFlags: 0
@@ -849,7 +855,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6737b451684f9734a8387ff0326c3cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pipe: {fileID: 1820951161904051979, guid: ad734d6d765c7ab4db09baab618dbcd1, type: 3}
+  pipe: {fileID: 122380942955671213, guid: ad734d6d765c7ab4db09baab618dbcd1, type: 3}
   spawnRate: 5
   heightOffset: 10
 --- !u!4 &464921095

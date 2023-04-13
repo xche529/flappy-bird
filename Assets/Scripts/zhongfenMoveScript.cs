@@ -8,10 +8,11 @@ public class zhongfenMoveScript : MonoBehaviour
     public float deadZone = -45;
     int yrange = 8;
     int ydirection = 1;
+    public BirdScript bird;
     // Start is called before the first frame update
     void Start()
     {
-        
+        bird = GameObject.FindGameObjectWithTag("Bird").GetComponent<BirdScript>();
     }
 
     // Update is called once per frame
@@ -33,4 +34,13 @@ public class zhongfenMoveScript : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == 3)
+        {
+            Destroy(gameObject);
+            bird.zhongfen = 1;
+        }
+    }
+
 }
