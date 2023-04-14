@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//这个是控制中分道具泡泡运动的代码，和kunkun柱子差不多
 public class zhongfenMoveScript : MonoBehaviour
 {
     public float moveSpeed = 5;
@@ -12,6 +12,7 @@ public class zhongfenMoveScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //寻找bird object
         bird = GameObject.FindGameObjectWithTag("Bird").GetComponent<BirdScript>();
     }
 
